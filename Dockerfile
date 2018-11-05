@@ -12,5 +12,6 @@ RUN apt-get update && apt-get install -y \
 RUN git clone --depth=1 --recursive https://github.com/MaskRay/ccls \
     && cd ccls \
     && cmake -H. -BRelease \
-    && cmake --build Release \
-    && export PATH=$PATH:/ccls/Release
+    && cmake --build Release
+
+ENV PATH $PATH:/ccls/Release
